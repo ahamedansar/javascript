@@ -1,13 +1,19 @@
 
-"use strict"
+// "use strict"
 
-x=5;
-console.log(x);
-var x=5;
+// x=5;
+// console.log(x);
+// var x=5;
 // /"use strict"
-//let x=5; 
+// let x=5; 
 // console.log(x);
 
-var x= "ansar"
-var x= "ashfak"
-console.log(x);
+// var x= "ansar";
+// var x= "ashfak";
+// console.log(x);
+
+
+ var x= "ansar"
+ var y= "ashfak"
+ y=x;
+ console.log(y);
