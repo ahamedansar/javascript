@@ -1,5 +1,8 @@
+
+//means take all values in an array and make them into one single value (like sum, product, max, etc).
+
 let numbers = [1, 2, 3, 4]
-let sum = numbers.reduce(( acc, num) => acc + num,0);
+let sum = numbers.reduce((acc, num) => acc + num, 0);
 console.log(sum);
 
 
