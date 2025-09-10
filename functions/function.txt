@@ -1,0 +1,17 @@
+functions are block of code design to perform perticular task
+
+1. function declaration
+2. function expresssion
+3. arrow function
+4. callback function
+5. IIFE (immediately invocked function expression)
+
+
+Pre Defined Function (built-in-functions)
+1. string function
+2. date function
+3. math function
+
+
+
+anonymous function= function without a name is called anonymous function
