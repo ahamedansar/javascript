@@ -1,0 +1,26 @@
+<!-- is it js method used to access an html element by its id attribute -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahamed Ansar</title>
+</head>
+<body>
+    <h1 id="anchu">WELCOME</h1>
+    <button onclick="changeHeading()">Click me</button>
+
+    <script>
+        function changeHeading() {
+            const heading = document.getElementById("anchu");
+
+            if (heading.textContent === "WELCOME") {
+                heading.textContent = "Hello u CLICKED";
+            } else {
+                heading.textContent = "WELCOME";
+            }
+        }
+    </script>
+</body>
+</html>

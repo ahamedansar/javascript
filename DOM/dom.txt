@@ -1,0 +1,5 @@
+Document object model (Dom)
+Dom is  a progrmming interface provided by browser
+it allows java script to access manipulate the structure style and content of a  web page
+
+programming interface = set of tools methods and rules that allows software to interact with something else such as system, service or document.

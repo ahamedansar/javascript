@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+
+    <script>
+        const boxes = document.getElementsByClassName("box");
+
+        console.log("found elements:", boxes);
+
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.color = 'blue';
+            
+        }
+        
+    </script>
+    
+</body>
+</html>

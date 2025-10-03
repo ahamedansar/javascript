@@ -1,0 +1,1 @@
+destructuring assignment that allows you to unpack value from arrays or properties from object into seperate values
