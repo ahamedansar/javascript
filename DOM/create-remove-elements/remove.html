@@ -1,0 +1,35 @@
+<!-- directly remove the selected item -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2 id="new">Remove Example</h2> 
+  <p id="myPara">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, nisi quibusdam doloribus voluptatem iure eius quae id doloremque laboriosam nesciunt recusandae quaerat nemo commodi! Minus!</p> 
+  <button onclick="removePara()">remove paragraph</button>
+  <button onclick="removep()">undo</button>
+
+  <script>
+    function removePara() {
+        let para = document.getElementById("myPara")
+        para.remove()
+
+    }
+
+     function removep() {
+      const paraNew = document.createElement('p');
+      paraNew.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, nisi quibusdam doloribus voluptatem iure eius quae id doloremque laboriosam nesciunt recusandae quaerat nemo commodi! Minus!";
+      const heading = document.getElementById("new");
+      heading.append(paraNew) 
+
+      
+
+
+    }
+  </script>
+</body>
+</html>

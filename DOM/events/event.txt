@@ -1,0 +1,8 @@
+events is an action or occurens that happens to the browser
+event handling= means writing a js code that will run on a specific event occurens 
+
+
+Q. there are multiple ways to handle events 
+
+1. inline event
+2. doom properties

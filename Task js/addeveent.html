@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>addEventListener Example</title>
+</head>
+<body>
+  <button id="myButton">Click Me!</button>
+  <p id="message"></p>
+
+  <script>
+    // Get the button and paragraph elements
+    const button = document.getElementById("myButton");
+    const message = document.getElementById("message");
+
+    // Add an event listener for 'click' event
+    button.addEventListener("click", function() {
+      message.textContent = "Button was clicked!";
+    });
+  </script>
+</body>
+</html>

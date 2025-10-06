@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove/Restore Child Example</title>
+</head>
+<body>
+    <h2>Remove & Restore Child Example</h2>
+
+    <div id="container">
+        <h2>ahamed ansar nasim the best</h2>
+        <p id="child">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas illum dolor repellendus voluptate esse dolores?</p>
+    </div>
+
+    <button onclick="toggleChild()">Remove child</button>
+
+    <script>
+        let removed = false;     // track state
+        let savedChild = null;   // store removed element
+
+        function toggleChild() {
+            let parent = document.getElementById("container");
+            let button = document.querySelector("button");
+
+            if (!removed) {
+                // remove <p> and save it
+                savedChild = document.getElementById("child");
+                parent.removeChild(savedChild);
+                button.textContent = "Restore child";
+                removed = true;
+            } else {
+                // restore the <p>
+                parent.appendChild(savedChild);
+                button.textContent = "Remove child";
+                removed = false;
+            }
+        }
+    </script>
+</body>
+</html>
