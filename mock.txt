@@ -1,0 +1,25 @@
+questions for mock-interview
+
+1. what is the difference between synchrounous and asynchrounous operation?
+2. what is dom ?
+3. what are the data types in js ?
+4. what is the event in js ?
+5. what are closure in js ?
+6. what is the diff between map and forEach ?
+7. what is a callBack function in js ?
+8. what is inheritance in js ?
+9. what is the purpose try and catch in js ?
+10.what is the purpose of addEventListener method in js ?
+11.what is diff between query selector and query selector all in js ?
+12.what is diff between null and undefined in js ?
+13.what is diff between equal(==) and strictly equal (===) in js ?
+14.what is hoisting in js ?
+15.what is the 'this' keyword in js ?
+16.what are the diff way to define a function in js ?
+17.what is purpose of let, var, const in js ?
+18.what is the diff between primitive and non-primitive data types ?
+19.what is use of spread operator ?
+20.what is turnery operator in js ?
+21.what is rest-parameter in js ?
+22.
+
