@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Down and Up Example</title>
+</head>
+
+<body>
+    <div id="box" style="background-color: aqua; width: 150px; height: 150px;"></div>
+
+    <script>
+        const box = document.getElementById("box");
+
+        // When mouse button is pressed down
+        box.addEventListener("mousedown", function () {
+            this.style.backgroundColor = "green";
+            console.log("Mouse button pressed down...");
+        });
+
+        // When mouse button is released
+        box.addEventListener("mouseup", function () {
+            this.style.backgroundColor = "red";
+            console.log("Mouse button released...");
+        });
+    </script>
+</body>
+
+</html>
