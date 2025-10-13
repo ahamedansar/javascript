@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Required Reset Example</title>
+</head>
+<body>
+    <form id="myform">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <button type="reset">Reset</button>
+    </form>
+
+    <p id="otp"></p>
+
+    <script>
+        const form = document.getElementById("myform");
+        const output = document.getElementById("otp");
+        const input = document.getElementById("name");
+
+        form.addEventListener("reset", (event) => {
+            event.preventDefault(); // stop default reset
+
+            if (input.value.trim() === "") {
+                output.innerText = "Please enter your name before resetting!";
+                output.style.color = "red";
+            } else {
+                input.value = ""; // manually reset input
+                output.innerText = "Reset successful!";
+                output.style.color = "green";
+            }
+        });
+    </script>
+</body>
+</html>
