@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Event</title>
+</head>
+<body>
+    <h2>Error Event</h2>
+    <p id="msg"></p>
+
+    <script>
+        window.addEventListener("error", (event) => {
+            document.getElementById("msg").textContent =
+                "Error occurred: " + event.message;
+        });
+
+        // Example error (you can comment this out)
+        console.log(notDefinedVariable);
+    </script>
+</body>
+</html>

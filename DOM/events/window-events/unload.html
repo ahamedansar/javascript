@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unload Event</title>
+</head>
+<body>
+    <h2>Unload Event</h2>
+    <p>Check console when closing or refreshing the page.</p>
+
+    <script>
+        window.addEventListener("unload", () => {
+            console.log("Page is unloading or closing...");
+            // Note: You cannot modify HTML during unload event
+        });
+    </script>
+</body>
+</html>
