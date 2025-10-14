@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeking and Seeked Example</title>
+</head>
+<body>
+    <audio controls id="audioPlayer">
+        <source src="10.jpeg" type="audio/mpeg">
+        <!-- Make sure this is a valid audio file (not an image like .jpeg) -->
+    </audio>
+
+    <p id="seekStatus">Status: Waiting...</p>
+
+    <script>
+        const audioPlayer = document.getElementById("audioPlayer");
+        const seekStatus = document.getElementById("seekStatus");
+
+        // When user starts seeking (dragging or jumping)
+        audioPlayer.addEventListener("seeking", () => {
+            seekStatus.textContent = `Status: Seeking... (current time: ${audioPlayer.currentTime.toFixed(2)}s)`;
+        });
+
+        // When seeking is completed (new position loaded)
+        audioPlayer.addEventListener("seeked", () => {
+            seekStatus.textContent = `Status: Seek complete at ${audioPlayer.currentTime.toFixed(2)}s`;
+        });
+    </script>
+</body>
+</html>

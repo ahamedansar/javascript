@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeking Example</title>
+</head>
+<body>
+    <audio controls id="audioSeeking">
+        <source src="10.jpeg" type="audio/mpeg">
+    </audio>
+
+    <p id="status">Status: Not seeking</p>
+
+    <script>
+        const audio = document.getElementById("audioSeeking");
+        const status = document.getElementById("status");
+
+        // Fired when seeking starts
+        audio.addEventListener("seeking", () => {
+            status.textContent = `Status: Seeking... (current time: ${audio.currentTime.toFixed(2)}s)`;
+        });
+
+        // Fired when seeking ends
+        audio.addEventListener("seeked", () => {
+            setTimeout(() => {
+                status.textContent = `Status: Seek complete at ${audio.currentTime.toFixed(2)}s`;
+            }, 600); // small delay so "seeking" text is visible
+        });
+    </script>
+</body>
+</html>
