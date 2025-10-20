@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f5f5f5;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+      text-align: center;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 1rem;
+      border: 2px solid #e1e1e1;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Contact form</h2>
+        <form id="contact-form">
+            <input type="text" name="name" placeholder="your name " required> <br> 
+            <input type="email" name="email" placeholder="your email " required> <br> 
+            <input type="text" name="title" placeholder="your message " required> <br> 
+            <textarea name="message" placeholder="your message" required></textarea> <br> 
+            <button type="submit">send message</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        //initialize email js
+        (function (){
+            emailjs.init("IFIAi9DwwYaAtwVlt") //public key
+        }) ();
+
+        //handle form submit
+        document.getElementById("contact-form").addEventListener("submit", function (event){
+        event.preventDefault();
+        emailjs.sendForm("service_uykq8tn", "template_juk9g65", this)                           
+            .then(function(){
+                alert("message send successfully")
+            }, function (error) {
+                alert ("failed to send message")
+            
+            })
+        })
+    </script>
+</body>
+</html>
