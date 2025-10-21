@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="background-gradient">
+        <div class="form-container">
+            <header class="form-header">
+                EVENT REGISTRATION FORM
+            </header>
+            <form id="registrationForm" onsubmit="return validateForm()">
+    <div class="form-group-row">
+        <label for="firstName" id="name">Name</label>
+        <div class="input-group">
+            <input type="text" id="firstName" name="firstName" placeholder="First Name">
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name">
+            <span class="error" id="nameError"></span> <br><br>
+
+        </div>
+    </div>
+
+    <div class="form-group-row">
+        <label for="company" id="company">Company</label>
+        <div class="input-group full-width-input">
+            <input type="text" id="company" name="company">
+             <span class="error" id="companyError"></span><br><br>
+        </div>
+    </div>
+
+    <div class="form-group-row">
+        <label for="email" id="email">Email</label>
+        <div class="input-group full-width-input">
+            <input type="email" id="email" name="email" placeholder="example@email.com">
+                  <span class="error" id="emailError"></span><br><br>
+
+        </div>
+    </div>
+
+    <div class="form-group-row">
+        <label for="phoneArea" id="phone">Phone</label>
+        <div class="input-group phone-group">
+            <input type="text" id="phoneArea" name="phoneArea" placeholder="Area Code" maxlength="4" class="area-code">
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number">
+                <span class="error" id="phoneError"></span><br><br>
+
+        </div>
+    </div>
+<div class="form-group-row">
+                    <label for="subject">Subject</label>
+                    <div class="input-group full-width-input">
+                        <select id="subject" name="subject">
+                            <option value="" disabled selected>Choose Option</option>
+                            <option value="option1">Option 1</option>
+                            <option value="option2">Option 2</option>
+                            <option value="option3">Option 3</option>
+                        </select>
+                           <span class="error" id="subjectError"></span><br><br>
+
+                    </div>
+                </div>
+
+                <label style="font-size: 14px;">Are you an existing customer?</label> <br>
+            <div class="rrrr">
+                <label><input type="radio" name="customer" value="yes"> Yes</label>
+                <label><input type="radio" name="customer" value="no"> No</label>
+            </div>
+
+                
+                <button type="submit" class="register-button">REGISTER</button>
+
+    </form>
+        </div>
+    </div>
+    
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <style>
+        /* Background gradient */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #3b82f6, #a855f7);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Form container */
+        .form-container {
+            background: #fff;
+            width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .form-header {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        /* Form content */
+        form {
+            padding: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        input:focus, select:focus {
+            border-color: #3b82f6;
+            outline: none;
+        }
+
+
+        /* Radio buttons */
+        .radio-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* Submit button */
+        button {
+            width: 100%;
+            background: #ef4444;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #dc2626;
+        }
+
+        /* Error message */
+        .error {
+            color: #ef4444;
+            font-size: 13px;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-header">EVENT REGISTRATION FORM</div>
+
+        <form id="registrationForm">
+            <label>Name</label>
+           
+                <input type="text" id="firstName" placeholder="First Name">
+                <input type="text" id="lastName" placeholder="Last Name">
+           
+
+            <label>Company</label>
+            <input type="text" id="company" placeholder="Company Name">
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="example@email.com">
+
+            <label>Phone</label>
+           
+                <input type="text" id="areaCode" placeholder="Area Code" maxlength="5">
+                <input type="text" id="phoneNumber" placeholder="Phone Number" maxlength="10">
+          
+
+            <label>Subject</label>
+            <select id="subject">
+                <option value="">Choose Option</option>
+                <option>Business</option>
+                <option>Technology</option>
+                <option>Marketing</option>
+                <option>Other</option>
+            </select>
+
+            <label>Are you an existing customer?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="customer" value="yes" checked> Yes</label>
+                <label><input type="radio" name="customer" value="no"> No</label>
+            </div>
+
+            <button type="submit">REGISTER</button>
+            <p id="formMessage" class="error"></p>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const message = document.getElementById('formMessage');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            message.textContent = '';
+
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const company = document.getElementById('company').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const areaCode = document.getElementById('areaCode').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const subject = document.getElementById('subject').value;
+
+            // Validation
+            if (!firstName || !lastName || !company || !email || !areaCode || !phoneNumber || !subject) {
+                message.textContent = '⚠️ Please fill in all fields.';
+                return;
+            }
+
+            const emailRegex = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+            if (!emailRegex.test(email)) {
+                message.textContent = '⚠️ Please enter a valid email address.';
+                return;
+            }
+
+            if (isNaN(areaCode) || isNaN(phoneNumber)) {
+                message.textContent = '⚠️ Phone number and area code must be numeric.';
+                return;
+            }
+
+            // Success message
+            alert(`✅ Registration successful!\n\nThank you, ${firstName} ${lastName}.`);
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>

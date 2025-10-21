@@ -1,0 +1,213 @@
+/* Basic Reset and Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; /* A clean, modern font */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Background Gradient Mimicking the Image */
+.background-gradient {
+    width: 100%;
+    min-height: 100vh;
+    /* Use a gradient similar to the picture (purple to blue/cyan) */
+    background: linear-gradient(135deg, #8a2be2, #4169e1, #00ced1); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Form Container Styling */
+.form-container {
+    background-color: white;
+    width: 100%;
+    max-width: 550px; /* Standard form width */
+    border-radius: 8px; /* Slight rounding for the corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    overflow: hidden; /* To contain the header background */
+}
+
+/* Form Header */
+.form-header {
+    background-color: #333333; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Form Padding */
+form {
+    padding: 30px 40px; /* Inner padding for the white area */
+}
+
+/* Standard Form Group (Label + Input) */
+.form-group {
+    margin-bottom: 20px;
+       display: flex;
+    align-items: flex-start;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Handling Input Rows (Name, Phone) */
+.form-group-row {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start; /* Align label to the top */
+}
+
+.form-group-row label {
+    width: 25%; /* Give the label fixed width */
+    padding-top: 10px; /* Vertically align with inputs */
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group-row .input-group {
+    width: 75%; /* The rest of the space for inputs */
+    display: flex;
+    gap: 10px; /* Space between input fields */
+}
+
+/* General Input and Select Styling */
+input[type="text"], 
+input[type="email"], 
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f7f7f7; /* Light gray background for fields */
+    font-size: 1em;
+    color: #333;
+    outline: none; /* Remove default focus outline */
+}
+
+/* Specific Phone Group Styling */
+.phone-group .area-code {
+    flex-grow: 0;
+    width: 30%; /* Shorter width for area code */
+}
+
+.phone-group input[type="text"] {
+    flex-grow: 1;
+}
+
+/* Subject/Select Dropdown */
+select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%2069.9l-136.5%20136.5c-3.1%203.1-6.8%204.6-10.5%204.6s-7.4-1.5-10.5-4.6L5.4%2069.9c-6.7-6.7-6.7-17.6%200-24.3s17.6-6.7%2024.3%200l106.8%20106.8L262.7%2045.6c6.7-6.7%2017.6-6.7%2024.3%200s6.7%2017.6%200%2024.3z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    padding-right: 30px; /* Space for the custom arrow */
+}
+
+/* Radio Button Group Styling */
+.radio-group {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.radio-group p {
+    font-weight: bold;
+    color: #555;
+    margin-right: 20px;
+}
+
+.radio-options {
+    display: flex;
+    gap: 20px;
+}
+
+/* Custom Radio Button Appearance (Green Dot) */
+.radio-options label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 20px;
+    font-weight: normal;
+    color: #555;
+}
+
+.radio-options input[type="radio"] {
+    position: absolute;
+    opacity: 0; /* Hide the default radio button */
+}
+
+.radio-options label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #f7f7f7;
+}
+
+/* Checked state - Green inner circle */
+.radio-options input[type="radio"]:checked + label::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #28a745; /* Green color */
+}
+
+/* Register Button Styling */
+.register-button {
+    width: 200px;
+    padding: 12px;
+    background-color: #dc3545; /* Red background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.register-button:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+  .rrrr {
+            display: flex;
+            align-items: center;
+            gap: 90px;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+
+        .rrrrr label {
+            margin: 0;
+            font-weight: 400;
+        }
